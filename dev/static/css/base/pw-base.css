@@ -1,0 +1,548 @@
+/*
+ * Copyright 2018 Alexey Lavrenchenko (http://alavrenchenko.com/). All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+*, :after, :before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+    background-color: #281a56;
+    min-width: 325px;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.pw-page-content {
+    position: relative;
+}
+
+.pw-full-page {
+
+}
+
+.pw-wrapper {
+    position: relative;
+    top: 0;
+}
+
+.pw-wrapper-full-page {
+    height: auto;
+    min-height: 100vh;
+}
+
+.pw-container {
+    margin: 0;
+    padding: 0 25px;
+}
+
+@media (max-width: 600px) {
+    .pw-container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.pw-page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.pw-page-body {
+    position: relative;
+    min-height: calc(100vh - 115px - 70px);
+    overflow: hidden;
+}
+
+.pw-page-footer {
+    position: relative;
+    color: #fff;
+}
+
+.pw-page-body-col-1, .pw-page-body-col-2 {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    min-height: 1px;
+}
+
+.pw-page-body-col-2 {
+    padding-left: 25px;
+}
+
+@media (max-width: 900px) {
+    .pw-page-body-col-1 {
+        width: 35%;
+    }
+
+    .pw-page-body-col-2 {
+        width: 65%;
+    }
+}
+
+@media (max-width: 700px) {
+    .pw-page-body-col-1 {
+        width: 100px;
+    }
+
+    .pw-page-body-col-2 {
+        padding-left: 15px;
+        width: calc(100% - 100px);
+    }
+
+    .pw-contact_collapsed .pw-page-body-col-2 {
+        display: none;
+    }
+
+    .pw-contact_collapsed .pw-page-body-col-1 {
+        width: 100%;
+    }
+}
+
+
+.pw-navbar {
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.pw-navbar-brand {
+    position: relative;
+    background-color: transparent;
+    float: left;
+    color: #fff;
+    font: 400 26px Helvetica,Arial,sans-serif;
+    margin-top: 15px;
+    margin-right: 15px;
+    padding: 8px 3px 11px;
+    user-select: none;
+}
+
+.pw-navbar-nav {
+    float: right;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.pw-nav-item {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.pw-nav-link-item {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 15px 15px;
+    color: #fff;
+    line-height: 20px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.pw-nav-link-item:hover {
+    color: #ddd;
+}
+
+.pw-nav__contact {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .pw-contact_collapsed .pw-nav__contact {
+        display: block;
+    }
+}
+
+.pw-content {
+}
+
+.pw-content-header {
+
+}
+
+.pw-content-body {
+}
+
+.pw-content-footer {
+
+}
+
+.pw-bgd__canvas {
+
+}
+
+.pw-contact {
+    display: block;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 25px;
+    text-align: left;
+    max-width: 600px;
+}
+
+.pw-contact-card {
+}
+
+.pw-contact-content {
+}
+
+.pw-contact-header {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.pw-contact-body {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.pw-contact-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.pw-contact__title {
+    color: #fff;
+    font: 400 24px Helvetica,Arial,sans-serif;
+}
+
+.pw-contact__close {
+    display: none;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    padding: 3px 5px 0 0;
+    cursor: pointer;
+}
+
+.pw-contact__close svg {
+    stroke: #a1a1a1;
+    stroke-width: 1px;
+}
+
+.pw-contact__close:hover svg {
+    stroke-width: 2px;
+}
+
+@media (max-width: 700px) {
+    .pw-contact__title {
+        font-size: 20px;
+    }
+
+    .pw-contact__close {
+        display: inline-block;
+    }
+}
+
+.pw-contact__status {
+    color: #fff;
+    font-size: 14px;
+    margin: 8px 10px 8px 0;
+    word-break: break-word;
+}
+
+.pw-contact_status_successful .pw-contact__status {
+    color: #0fd125;
+}
+
+.pw-contact_status_error .pw-contact__status {
+    color: #f44336;
+}
+
+.pw-contact__status:empty {
+    display: none;
+    margin-bottom: 0;
+}
+
+.pw-form-field {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 5px;
+    box-sizing: content-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    font-size: 14px;
+}
+
+.pw-form-field-type-input {
+}
+
+
+.pw-form-field-wrapper {
+    position: relative;
+    vertical-align: top;
+    padding-top: 5px;
+}
+
+
+.pw-form-field-input-wrapper {
+    position: relative;
+    min-width: 0%;
+    padding-top: 24px;
+}
+
+.pw-textbox__element {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font: 400 16px Helvetica,Arial,sans-serif;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    min-width: 0%;
+    outline: none;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    caret-color: #3f51b5;
+    z-index: 0;
+}
+
+.pw__input::-ms-clear {
+    display: none;
+}
+
+.pw-textbox__element.pw__input {
+    height: 24px;
+}
+
+.pw-textbox__element.pw__textarea {
+    border-bottom: 1px solid transparent;
+    padding: 2px 0;
+    min-height: 24px;
+    resize: vertical;
+    overflow: auto;
+}
+
+.pw-form-field__label {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    color: #aaa;
+    width: 100%;
+    font: 400 16px Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    transform-origin: bottom left;
+    transition: all .3s cubic-bezier(0.4,0,0.2,1);
+    transition-property: color,bottom,transform,width;
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 601px) {
+    .pw-form-field .pw-textbox__element {
+        font-size: 16px;
+    }
+
+    .pw-form-field .pw-form-field__label {
+        font-size: 16px;
+    }
+}
+
+.pw-form-field-underline {
+    width: 100%;
+    pointer-events: none;
+    transform: scaleX(1.0001);
+    bottom: 1.25em;
+    background-color: #fff;
+    height: 1px;
+}
+
+.pw-form-field-ripple {
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+    transform: scaleX(.5);
+    transition: background-color .3s cubic-bezier(.55,0,.55,.2);
+    transform-origin: 50%;
+}
+
+.pw-form-field_focused .pw-form-field-ripple {
+    background-color: rgb(63, 81, 181);
+    opacity: 1;
+    transform: scaleX(1);
+    transition: transform .3s cubic-bezier(.25,.8,.25,1),opacity .1s cubic-bezier(.25,.8,.25,1),background-color .3s cubic-bezier(.25,.8,.25,1);
+}
+
+/*
+    In IE, when you change the window, the focus is not removed.
+.pw-textbox__element:not([disabled]):focus ~ .pw-form-field__label,*/
+.pw-form-field_focused .pw-textbox__element:not([disabled]) ~ .pw-form-field__label,
+.pw-form-field_has-value .pw-form-field__label {
+    transform: scale(.75) translateY(-39px);
+    color: rgb(63, 81, 181);
+    width: 133.3333333%;
+}
+
+.pw-form-field-subscript-wrapper {
+    font: 400 12px Helvetica,Arial,sans-serif;
+}
+
+.pw-form-field__error {
+    color: #f44336;
+    min-height: 16px;
+    padding-top: 8px;
+    word-break: break-word;
+}
+
+.pw-form-field__error:empty {
+    display: none;
+    min-height: 0;
+    padding-top: 0;
+}
+
+/*
+    In IE, when you change the window, the focus is not removed.
+.pw-form-field_invalid .pw-textbox__element:not([disabled]):focus ~ .pw-form-field__label,*/
+.pw-form-field_focused.pw-form-field_invalid .pw-textbox__element:not([disabled]) ~ .pw-form-field__label,
+.pw-form-field_has-value.pw-form-field_invalid .pw-form-field__label {
+    color: #f44336;
+}
+
+.pw-form-field_invalid .pw-form-field-underline {
+    height: 2px;
+}
+
+.pw-form-field_invalid .pw-form-field-underline,
+.pw-form-field_invalid .pw-form-field-ripple {
+    background-color: #f44336;
+}
+
+.pw-btn {
+    display: inline-block;
+    position: relative;
+    background: #1a73e8;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    transition: all .3s cubic-bezier(0.4,0,0.2,1);
+    transition-property: background,box-shadow;
+    box-shadow: none;
+    min-width: 90px;
+    outline: none;
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: .25px;
+    text-transform: none;
+    user-select: none;
+}
+
+.pw-btn-ripple {
+    transform: translate(-50%,-50%) scale(0);
+    transition: opacity .2s ease,visibility 0s ease .2s;
+    background-size: cover;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    
+    background-image: radial-gradient(circle farthest-side,#3367d6,#3367d6 80%,rgba(51,103,214,0) 100%);
+
+}
+
+.pw-btn-content {
+    position: relative;
+}
+
+.pw-btn__text {
+    color: #fff;
+    display: inline-block;
+    margin: 8px 16px;
+}
+
+.pw-btn.pw-btn_transition {
+    transition: background .8s;
+}
+
+.pw-btn_transition .pw-btn-ripple {
+    transform: translate(-50%,-50%) scale(2.2);
+    opacity: 1;
+    visibility: visible;
+    transition: transform .3s cubic-bezier(0,0,0.2,1), opacity .2s cubic-bezier(0,0,0.2,1);
+}
+
+.pw-btn:hover {
+    background: #287ae6;
+    box-shadow: 0 1px 1px 0 rgba(66,133,244,0.45), 0 1px 3px 1px rgba(66,133,244,0.3);
+}
+
+.pw-wrapper-full-page::after, .pw-wrapper-full-page::before,
+.pw-navbar::after, .pw-navbar::before,
+.pw-navbar-nav::after, .pw-navbar-nav::before {
+    display: table;
+    content: "";
+}
+
+.pw-navbar::after,
+.pw-navbar-nav::after {
+    clear: both;
+}
+
+.pw-block_center {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.pw--text-align_right {
+    text-align: right !important;
+}
+
+.pw--float_right {
+    float: right !important;
+}
+
+.pw--float_left {
+    float: left !important;
+}

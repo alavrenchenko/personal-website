@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alexey Lavrenchenko">
+    <meta name="keywords" content="Alexey Lavrenchenko">
+    <meta property="og:description" content="Alexey Lavrenchenko">
+    <meta property="og:site_name" content="Alexey Lavrenchenko">
+    <meta property="og:url" content="http://alavrenchenko.com/">
+    <meta property="og:title" content="{{title}}">
+    <meta name="application-name" content="Alexey Lavrenchenko">
+    <title>{{title}}</title>
+    {{#each styles}}
+    <link href="{{href}}" rel="stylesheet" />
+    {{/each}}
+    {{#each scripts}}
+    <script src="{{src}}"></script>
+    {{/each}}
+</head>
+
+<body>
+    <div class="pw-page-content pw-full-page">
+        <div class="pw-wrapper pw-wrapper-full-page">
+            <div class="pw-container">
+                <div class="pw-page-header">
+                    <div class="pw-navbar">
+                        <a class="pw-navbar-brand" href="/"></a>
+                        <div class="pw-navbar-nav">
+                            <a class="pw-nav-link-item">
+                                <div class="pw-nav-item__text">Contact</div>
+                            </a>
+                            <a class="pw-nav-link-item" href="https://github.com/alavrenchenko" target="_blank">
+                                <div class="pw-nav-item__text">GitHub</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pw-page-body"></div>
+                <div class="pw-page-footer">
+                    <p>&copy; 2018 Alexey Lavrenchenko</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
