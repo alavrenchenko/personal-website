@@ -16,10 +16,10 @@
 
 'use strict';
 
-var port = process.env.PORT || 5001;
-
 const PWApplication = require('./pw-application');
 const globals = require('./core/globals');
+
+let port = process.env.PORT || 5001;
 
 // production, development, test
 process.env.NODE_ENV = 'production';

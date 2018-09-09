@@ -24,14 +24,21 @@ PW.app.view.PWPage = function (wfWindow, isLazyInit) {
     WebF.app.view.Page.call(this, wfWindow, isLazyInit);
 
     /**
+     * @private
      * @type {PW.ui.PageContent}
      */
     this._content = new PW.ui.PageContent(this.domHelper);
 
     Object.defineProperty(this, 'content', {
+        /**
+         * @returns {PW.ui.PageContent}
+         */
         get: function () {
             return this._content;
         },
+        /**
+         * @param {PW.ui.PageContent} value
+         */
         set: function (value) {
             if (this._content === value) {
                 return;

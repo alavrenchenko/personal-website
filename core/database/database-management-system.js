@@ -23,12 +23,10 @@ class DatabaseManagementSystem {
      * @param {PWApplication} app
      */
     constructor(app) {
-        this._app = app;
-
         /**
-         * @readonly
+         * @private
          */
-        this._contactMessages = new ContactMessages(this);
+        this._app = app;
 
         /**
          * @const
@@ -48,6 +46,12 @@ class DatabaseManagementSystem {
          * @const
          */
         this.PERSONAL_WEBSITE_CONTACT_MESSAGES_TABLE = 'contact_messages';
+
+        /**
+         * @private
+         * @readonly
+         */
+        this._contactMessages = new ContactMessages(this);
     }
 
     get app() {
